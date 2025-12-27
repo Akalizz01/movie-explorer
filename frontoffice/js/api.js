@@ -11,17 +11,22 @@ async function apiGet(endpoint) {
 }
 
 // Função para POST
-async function apiPost(endpoint, data) {
-    const res = await fetch(`${API_URL}${endpoint}`, {
+async function apiPost(url, body, token = null) {
+    const headers = { "Content-Type": "application/json" };
+
+    if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+    }
+
+    const res = await fetch(API_URL + url, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${localStorage.getItem("token")}`
-        },
-        body: JSON.stringify(data)
+        headers,
+        body: JSON.stringify(body)
     });
+
     return res.json();
 }
+
 
 // Função para PUT
 async function apiPut(endpoint, data) {
@@ -37,12 +42,18 @@ async function apiPut(endpoint, data) {
 }
 
 // Função para DELETE
-async function apiDelete(endpoint) {
-    const res = await fetch(`${API_URL}${endpoint}`, {
+async function apiDelete(url, token = null) {
+    const headers = {};
+
+    if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+    }
+
+    const res = await fetch(API_URL + url, {
         method: "DELETE",
-        headers: {
-            "Authorization": `Bearer ${localStorage.getItem("token")}`
-        }
+        headers
     });
+
     return res.json();
 }
+

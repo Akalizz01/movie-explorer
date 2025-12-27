@@ -8,17 +8,28 @@ if (loginForm) {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        const res = await apiPost("/auth/login", { email, password });
+        try {
+            const res = await apiPost("/auth/login", { email, password });
 
-        if (res.token) {
+            if (res.error) {
+                alert(res.error);
+                return;
+            }
+
+            // Guardar token e user
             localStorage.setItem("token", res.token);
             localStorage.setItem("user", JSON.stringify(res.user));
+
             window.location.href = "index.html";
-        } else {
-            alert(res.error || "Credenciais inválidas");
+
+        } catch (err) {
+            console.error(err);
+            alert("Erro ao fazer login");
         }
     });
 }
+
+
 
 // REGISTO
 const registerForm = document.getElementById("registerForm");
@@ -31,13 +42,20 @@ if (registerForm) {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        const res = await apiPost("/auth/register", { nome, email, password });
+        try {
+            const res = await apiPost("/auth/register", { nome, email, password });
 
-        if (res.message) {
+            if (res.error) {
+                alert(res.error);
+                return;
+            }
+
             alert("Conta criada com sucesso! Já podes fazer login.");
             window.location.href = "login.html";
-        } else {
-            alert(res.error || "Erro ao criar conta");
+
+        } catch (err) {
+            console.error(err);
+            alert("Erro ao criar conta");
         }
     });
 }

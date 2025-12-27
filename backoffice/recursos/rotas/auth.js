@@ -42,7 +42,14 @@ router.post('/login', (req, res) => {
         user.password
       );
 
-      res.json({ token });
+      res.json({ 
+        token,
+        user: {
+          id: user.id,
+          nome: user.nome,
+          email: user.email
+        }
+      });
     }
   );
 });

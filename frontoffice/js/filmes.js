@@ -1,6 +1,18 @@
 async function carregarPopulares() {
     const filmes = await apiGet("/tmdb/popular");
 
+    for (const filme of filmes) {
+        await apiPost("/movies/import", {
+            id: filme.id,
+            nome: filme.title,
+            sinopse: filme.overview,
+            poster_url: filme.poster_path,
+            ano_lancamento: filme.release_date 
+                ? filme.release_date.split("-")[0] 
+                : (filme.first_air_date ? filme.first_air_date.split("-")[0] : null)
+        });
+    }
+
     const container = document.getElementById("popular");
     container.innerHTML = "";
 
@@ -13,6 +25,8 @@ async function carregarPopulares() {
             </div>
         `;
     });
+
+
 }
 
 async function carregarDetalhes() {
@@ -27,7 +41,12 @@ async function carregarDetalhes() {
         <p>${filme.overview}</p>
         <p><strong>Duração:</strong> ${filme.runtime} min</p>
         <p><strong>Ano:</strong> ${filme.release_date.split("-")[0]}</p>
+        <button id="btnFavorito">Adicionar aos Favoritos</button>
     `;
+    document.getElementById("btnFavorito").addEventListener("click", () => { 
+        adicionarFavorito(filme.id);
+    });
+
 }
 
 if (window.location.pathname.includes("filme.html")) {

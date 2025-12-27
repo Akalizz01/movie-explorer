@@ -2,21 +2,22 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Filmes & Séries</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Favoritos</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header> 
-        <nav class="navbar"> 
-            <a href="index.html" class="logo">Home</a> 
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
             <a href="favoritos.html" id="btnFavoritos" style="display:none;">Favoritos</a>
-            <div id="userArea"></div> 
-        </nav> 
+            <div id="userArea"></div>
+        </nav>
     </header>
 
-    <h1>Filmes Populares</h1>
-    <div id="popular" class="grid"></div>
+    <h1>Os Meus Favoritos</h1>
+
+    <div id="listaFavoritos"></div>
 
     <script src="./js/api.js"></script>
     <script src="./js/user.js"></script>

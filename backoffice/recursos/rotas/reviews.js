@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../database/db');
-<<<<<<< HEAD
 const jwt = require('jsonwebtoken');
 
 // Função para obter user_id a partir do token
@@ -140,35 +139,6 @@ router.post('/vote/:reviewId', (req, res) => {
             );
         }
     );
-=======
-
-// Criar review
-router.post('/', (req, res) => {
-  const { user_id, movie_id, classificacao, critica } = req.body;
-
-  connection.query(
-    "INSERT INTO reviews (user_id, movie_id, classificacao, critica) VALUES (?, ?, ?, ?)",
-    [user_id, movie_id, classificacao, critica],
-    (err, result) => {
-      if (err) return res.status(500).json({ error: err.message });
-
-      res.status(201).json({ id: result.insertId });
-    }
-  );
-});
-
-// Votar utilidade
-router.put('/:id/vote', (req, res) => {
-  connection.query(
-    "UPDATE reviews SET votos_utilidade = votos_utilidade + 1 WHERE id = ?",
-    [req.params.id],
-    (err) => {
-      if (err) return res.status(500).json({ error: err.message });
-
-      res.json({ message: "Voto registado com sucesso!" });
-    }
-  );
->>>>>>> 96c6297d45370ac21e778bc9682a9aa5975eaf6a
 });
 
 module.exports = router;
