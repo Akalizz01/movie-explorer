@@ -90,11 +90,13 @@ git clone https://github.com/yourusername/your-repository-name.gi
 ```bash
 cd your-repository-name
 ```
-### 3 Install dependencies
+## 3 Install dependencies
+```bash
 npm install
-### 4 Configure the database
+```
+## 4 Configure the database
 Go to the directory backoffice/recursos/database/db.js and configure it according to your database's needs.
-### Start the server
+## 5 Start the server
 ```bash
 cd backoffice
 node server.js
