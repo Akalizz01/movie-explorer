@@ -127,13 +127,13 @@ Some challenges during development included:
 
 Possible improvements:
 
-🎬 Movie recommendations
-🎞️ Movie trailer integration
-🏆 Top rated movies based on user reviews
-🔎 Advanced filtering (genre, rating, year)
-👤 User profiles
-🌐 Deploy the application online
-📱 Improved responsive design
+- 🎬 Movie recommendations
+- 🎞️ Movie trailer integration
+- 🏆 Top rated movies based on user reviews
+- 🔎 Advanced filtering (genre, rating, year)
+- 👤 User profiles
+- 🌐 Deploy the application online
+- 📱 Improved responsive design
 
 # 📫 Contact
 
