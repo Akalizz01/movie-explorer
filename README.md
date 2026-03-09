@@ -66,16 +66,24 @@ The application is divided into two main parts:
 # 📸 Screenshots
 
 ## Home Page
-_Add a screenshot here_
+<img width="1901" height="962" alt="image" src="https://github.com/user-attachments/assets/6d3a8648-2f02-40db-8a12-5ca0388667ad" />
+
 
 ## Login Page
-_Add a screenshot here_
+<img width="1911" height="954" alt="image" src="https://github.com/user-attachments/assets/002a3c0f-1a0e-47d6-aba5-ec37e1def15d" />
+
 
 ## Movie Details
-_Add a screenshot here_
+<img width="1901" height="958" alt="image" src="https://github.com/user-attachments/assets/cdd4dc4c-1bdd-4e82-94c6-ad1f8299dd6f" />
+
 
 ## Favorites
-_Add a screenshot here_
+<img width="1911" height="956" alt="image" src="https://github.com/user-attachments/assets/b671682e-6d77-4d34-95e7-0117402ddd56" />
+
+## Personal list
+<img width="1913" height="955" alt="image" src="https://github.com/user-attachments/assets/88403f1f-3259-4efe-afc0-8e80116ddc60" />
+
+
 
 ---
 
