@@ -92,11 +92,11 @@ The application is divided into two main parts:
 
 ## 1 Clone the repository
 ```bash
-git clone https://github.com/yourusername/your-repository-name.gi
+git clone https://github.com/Akalizz01/movie-explorer.gi
 ```
 ## 2 Go to the project folder
 ```bash
-cd your-repository-name
+cd movie-explorer
 ```
 ## 3 Install dependencies
 ```bash
